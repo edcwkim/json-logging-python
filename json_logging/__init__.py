@@ -327,6 +327,14 @@ register_framework_support('flask', None, flask_support.FlaskAppRequestInstrumen
                            flask_support.FlaskRequestAdapter,
                            flask_support.FlaskResponseAdapter)
 
+# register django support
+# noinspection PyPep8
+import json_logging.framework.django as django_support
+
+register_framework_support('django', None, django_support.DjangoAppRequestInstrumentationConfigurator,
+                           django_support.DjangoRequestAdapter,
+                           django_support.DjangoResponseAdapter)
+
 # register flask support
 # noinspection PyPep8
 from json_logging.framework.sanic import SanicAppConfigurator, SanicAppRequestInstrumentationConfigurator, \
